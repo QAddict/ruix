@@ -29,7 +29,7 @@ body(
     ),
     svg(
         rect().x(10).y(10).width(100).height(100).stroke('black').fill('red'),
-        line().x1(10).y1(10).x2(100).x2(100).stroke('blue'),
+        line().x1(10).y1(10).x2(100).y2(100).stroke('blue'),
         circle().cx(55).cy(55).r(40).fill('green')
     )
 )

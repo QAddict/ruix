@@ -132,9 +132,7 @@ export class SvgBuilder extends ElementBuilder {
         return this.set('crossorigin', ...value)
     }
 
-    d(...value) {
-        return this.set('d', ...value)
-    }
+    d = (...value) => this.set('d', ...value)
 
     x(...value) {
         return this.set('x', ...value)
