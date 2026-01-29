@@ -954,7 +954,7 @@ export function view(...content) {
     return element('view', ...content)
 }
 
-export function set(...content) {
+export function setElement(...content) {
     return element('set', ...content)
 }
 

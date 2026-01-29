@@ -59,7 +59,7 @@ suite({
         svg.radialGradient()
         svg.rect()
         svg.script()
-        svg.set()
+        svg.setElement()
         svg.stop()
         svg.style()
         svg.svg()
