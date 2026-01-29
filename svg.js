@@ -181,7 +181,7 @@ export class SvgBuilder extends ElementBuilder {
     }
 
     stroke(...value) {
-        return this.set('contenteditable', ...value)
+        return this.set('stroke', ...value)
     }
 
     fill(...value) {
