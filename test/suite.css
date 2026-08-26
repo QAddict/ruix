@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+}
+th {
+    text-align: left;
+    background-color: #b1b1b1;
+}
+
+tr.passed td:nth-child(3) {
+    color: #005a00;
+    font-weight: bold;
+}
+
+tr.failed td:nth-child(3) {
+    color: #800000;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+}
+td, th {
+    padding: 0.3em;
+}
+
