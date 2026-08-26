@@ -1,0 +1,12 @@
+.th {
+    text-align: left;
+    background-color: #b1b1b1;
+}
+
+.tr:first-child {
+    color: green;
+}
+
+.tr td:first-child {
+    color: red;
+}
