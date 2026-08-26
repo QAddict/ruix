@@ -1,13 +1,16 @@
 import rules from "./suite.css" with { type: "css" };
+import {node} from "../mvc.js";
 document.adoptedStyleSheets = [rules];
 
+let currentTest = ""
 export function suite(def) {
+    let rep = report(def)
     Object
         .entries(def)
         .filter(testMethods)
         .flatMap(testCases(def))
         .map(runTestCase)
-        .forEach(report(def));
+        .forEach(rep);
 }
 
 function testMethods(entry) {
@@ -35,6 +38,7 @@ function testCase(name, scenario, parameters) {
 function runTestCase(testCase) {
     testCase.start = new Date()
     try {
+        currentTest = testCase.name
         testCase.run()
     } catch (error) {
         testCase.error = error
@@ -61,11 +65,17 @@ function report(def) {
         t.appendChild(document.createElement("td")).appendChild(document.createTextNode(testCase.error ? "failed" : "passed"))
         t.appendChild(document.createElement("td")).appendChild(document.createTextNode(testCase.start))
         t.appendChild(document.createElement("td")).appendChild(document.createTextNode(testCase.end))
-        t.appendChild(document.createElement("td")).appendChild(document.createTextNode(testCase.error))
+        t.appendChild(document.createElement("td")).appendChild(document.createTextNode(testCase.error || ""))
         t.setAttribute("class", testCase.error ? "failed" : "passed")
     }
 }
 
 export function assertEquals(expected, actual) {
     if(expected !== actual) throw new Error("Expected: " + expected + " to be equal to: " + actual + " but not equal.")
+}
+
+export function output(...children) {
+    let out = document.body.appendChild(document.createElement("div"))
+    out.appendChild(document.createElement("h3")).appendChild(document.createTextNode(currentTest + " output"))
+    children.forEach(child => out.appendChild(node(child)))
 }
