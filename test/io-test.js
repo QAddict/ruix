@@ -5,7 +5,7 @@ import {div} from "../html.js";
 
 suite({
 
-    name: "MVC test suite",
+    name: "IO test suite",
 
     async Get_request_should_set_response_to_output_state() {
         let testState = state()
@@ -24,4 +24,5 @@ suite({
         )
         await assert(() => 400 === transformedState.get())
     }
+
 })

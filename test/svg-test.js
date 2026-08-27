@@ -1,4 +1,4 @@
-import {suite} from "./run.js";
+import {output, suite} from "./run.js";
 import * as svg from "../svg.js";
 
 
@@ -79,6 +79,10 @@ suite({
         const el = svg.svg()
 
         el.cx()
+
+        output(
+            el
+        )
     }
 
 })
