@@ -3,23 +3,53 @@ body {
 }
 th {
     text-align: left;
-    background-color: #d8d8d8;
 }
 
-tr.passed td:nth-child(3) {
-    color: #005a00;
-    font-weight: bold;
+tr.passed td:nth-child(1):before {
+    content: '✅';
+    padding-right: 1em;
 }
 
-tr.failed td:nth-child(3) {
-    color: #800000;
+tr.failed td:nth-child(1):before {
+    content: '❌';
+    padding-right: 1em;
+}
+
+th:nth-child(1) {
+    width: 25%;
+}
+th:nth-child(2), th:nth-child(3) {
+    width: 15em;
+}
+td:nth-child(1) {
     font-weight: bold;
 }
 
 table {
     width: 100%;
+    border-top: 1px solid #d8d8d8;
 }
+
 td, th {
+    padding: 0.3em;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+h3 {
+    margin: 0;
     padding: 0.3em;
 }
 
+div.output-box {
+    margin-top: 2em;
+    border-radius: 10px;
+    background-color: #eaeaea;
+    box-shadow: 4px 4px 8px silver;
+}
+
+div.output {
+    margin: 2px;
+    border-radius: 8px;
+    background-color: white;
+    padding: 1em;
+}
